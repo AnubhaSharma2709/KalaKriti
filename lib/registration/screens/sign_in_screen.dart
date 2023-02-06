@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kalakriti/registration/utilis/color_theme.dart';
 import 'package:kalakriti/registration/utilis/utilis.dart';
+import 'package:kalakriti/registration/widgets/custom_main_button.dart';
 
 import '../utilis/constants.dart';
 
@@ -69,13 +70,24 @@ class _SignInScreenState extends State<SignInScreen> {
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                             labelText: passText,
-                            hintText: hintPassConText,
+                            hintText: hintPassText,
                             prefixIcon: Icon(Icons.key, color: colorBorder),
                           ),
+                        ),
+                        Center(
+                          child: MainButton(
+                              child: Text(loginText,
+                              style: TextStyle(
+                                color: backgroundColor,
+                              ),),
+                              color: colorBorder,
+                              isLoading: false,
+                              onPressed: () {}),
                         ),
                       ],
                     ),
                   ),
+                  
                 ],
               ),
             ),
