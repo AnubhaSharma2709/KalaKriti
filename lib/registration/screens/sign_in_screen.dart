@@ -69,7 +69,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                             labelText: passText,
-                            hintText: hintPassText,
+                            hintText: hintPassConText,
                             prefixIcon: Icon(Icons.key, color: colorBorder),
                           ),
                         ),
