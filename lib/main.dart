@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kalakriti/registration/screens/sign_in_screen.dart';
+import 'package:kalakriti/registration/screens/sign_up_screen.dart';
 import 'package:kalakriti/registration/utilis/color_theme.dart';
 void main (){
   runApp( const KalaKriti());
@@ -17,7 +18,8 @@ class KalaKriti extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
       ),
       home: const Scaffold(
-        body: SignInScreen()
+        body: null
+
       ),
     );;
   }
