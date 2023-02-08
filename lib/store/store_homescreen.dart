@@ -5,7 +5,7 @@ import 'package:kalakriti/registration/utilis/color_theme.dart';
 import 'package:kalakriti/registration/utilis/constants.dart';
 import 'package:kalakriti/registration/utilis/utilis.dart';
 import 'package:kalakriti/store/components/categories.dart';
-import 'package:kalakriti/store/components/newTech.dart';
+import 'package:kalakriti/store/components/TechStack.dart';
 import 'package:kalakriti/store/components/new_arrival_products.dart';
 import 'package:kalakriti/store/components/popular_products.dart';
 import 'package:kalakriti/store/components/search_form.dart';
