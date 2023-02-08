@@ -12,10 +12,10 @@ class TechStack extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = utilis().getscreenSize();
     return Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(18.0),
         child: Container(
           width: screenSize.width,
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -31,7 +31,8 @@ class TechStack extends StatelessWidget {
                           vertical: defaultPadding, horizontal: defaultPadding),
                       child: Row(
                         children: [
-                          SvgPicture.asset('lib/assets/icons/dress.svg'),
+                          Image.asset('lib/assets/icons/ar.png',
+                          height: 40),
                           Text('Try AR'),
                         ],
                       ),
@@ -50,7 +51,8 @@ class TechStack extends StatelessWidget {
                       vertical: defaultPadding, horizontal: defaultPadding),
                   child: Row(
                     children: [
-                      SvgPicture.asset('lib/assets/icons/dress.svg'),
+                      Image.asset('lib/assets/icons/online store.png',
+                      height: 40,),
                       Text('Try 3D Store'),
                     ],
                   ),
