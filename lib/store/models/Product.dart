@@ -16,25 +16,25 @@ class Product {
 List<Product> demo_product = [
   Product(
     image: "lib/assets/images/product_0.png",
-    title: "Long Sleeve Shirts",
-    price: 165,
+    title: "Lorem ",
+    price: 000,
     bgColor: const Color(0xFFFEFBF9),
   ),
   Product(
     image: "lib/assets/images/product_1.png",
-    title: "Casual Henley Shirts",
-    price: 99,
+    title: "Lorem",
+    price: 00,
   ),
   Product(
     image: "lib/assets/images/product_2.png",
-    title: "Curved Hem Shirts",
-    price: 180,
+    title: "Lorem",
+    price: 00,
     bgColor: const Color(0xFFF8FEFB),
   ),
   Product(
     image: "lib/assets/images/product_3.png",
-    title: "Casual Nolin",
-    price: 149,
+    title: "Lorem",
+    price: 000,
     bgColor: const Color(0xFFEEEEED),
   ),
 ];

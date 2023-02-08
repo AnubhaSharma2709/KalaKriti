@@ -48,30 +48,38 @@ class _StoreHomeScreenState extends State<StoreHomeScreen> {
     Size screenSize = utilis().getscreenSize();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colorBorder,
-        title:  Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-             const Text('Hi',textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.w500),),
-              Text(
-                userName,
-                textAlign: TextAlign.center,
-                style: const TextStyle(fontWeight: FontWeight.w500),
-              ),
-            ]),
+        iconTheme: IconThemeData(color: colorBorder),
+        backgroundColor: backgroundColor,
+        title: Image.asset('lib/assets/logo.png',
+        height: screenSize.height *0.12,
+          width: screenSize.width *0.12,
+        ),
         actions: [
           IconButton(
             icon: Icon(
               CupertinoIcons.bell_fill,
-              color: Colors.white,
+              color: colorBorder,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.heart_fill,
+              color: colorBorder,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.bag_fill,
+              color: colorBorder,
             ),
             onPressed: () {},
           ),
         ],
       ),
       drawer: Drawer(
+        backgroundColor: backgroundColor,
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 50),
           children: <Widget>[
