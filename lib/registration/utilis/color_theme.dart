@@ -7,6 +7,7 @@ const Color colorBorder = Color(0xff13005A);
 const Color errorBorder = Color(0xffFF1E1E);
 const Color colorButton = Color(0xffD0CBCB);
 const Color backgroundColor = Color(0xffEEF2FF);
+const Color spanColor = Colors.blue;
 
 // TextForm Field Widget
 const textInputDecoration = InputDecoration(
