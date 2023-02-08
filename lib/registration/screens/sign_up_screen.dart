@@ -66,8 +66,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     onChanged: (val) {
                       setState(() {
-                        email = val;
-                        print(email);
+                        fullName = val;
+                        print(fullName);
                       });
                     },
                   ),

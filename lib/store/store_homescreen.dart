@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kalakriti/registration/helper/helper_function.dart';
@@ -29,6 +30,7 @@ class _StoreHomeScreenState extends State<StoreHomeScreen> {
     super.initState();
     gettingUserData();
   }
+
   gettingUserData() async {
     await HelperFunctions.getUserEmailFromSF().then((value) {
       setState(() {
@@ -41,112 +43,114 @@ class _StoreHomeScreenState extends State<StoreHomeScreen> {
       });
     });
   }
+
   Widget build(BuildContext context) {
     Size screenSize = utilis().getscreenSize();
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Drawer(
-               child : ListView(
-                padding: const EdgeInsets.symmetric(vertical: 50),
-                children: <Widget>[
-                  Icon(
-                    Icons.account_circle,
-                    size: 150,
-                    color: Colors.deepPurple[600],
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    userName,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    email,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Divider(
-                    height: 2,
-                  ),
-                  ListTile(
-                    onTap: () async {
-                      showDialog(
-                          barrierDismissible: false,
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              title: const Text("Logout"),
-                              content: const Text("Are you sure you want to logout?"),
-                              actions: [
-                                IconButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  icon: const Text(
-                                    "No" , style: TextStyle(
-                                      color: Colors.red
-                                  ),
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () async {
-                                    await authService.signOut();
-                                    Navigator.of(context).pushAndRemoveUntil(
-                                        MaterialPageRoute(
-                                            builder: (context) => const SignInScreen()),
-                                            (route) => false);
-                                  },
-                                  icon: const Text(
-                                    "Yes",style: TextStyle(
-                                    color: Colors.green,
-                                  ),
-                                  ),
-                                ),
-                              ],
-                            );
-                          });
-                    },
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    leading: const Icon(Icons.exit_to_app),
-                    title: const Text(
-                      "Logout",
-                      style: TextStyle(color: Colors.black),
-                    ),
-                  )
-                ],
+        backgroundColor: colorBorder,
+        title:  Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+             const Text('Hi',textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.w500),),
+              Text(
+                userName,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontWeight: FontWeight.w500),
               ),
-            );
-          },
-          icon: SvgPicture.asset("lib/assets/icons/menu.svg"),
-        ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset("lib/assets/icons/Location.svg"),
-            const SizedBox(width: defaultPadding / 2),
-            Text(
-              "15/2 New Texas",
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-          ],
-        ),
+            ]),
         actions: [
           IconButton(
-            icon: SvgPicture.asset('lib/assets/icons/Notification.svg'),
+            icon: Icon(
+              CupertinoIcons.bell_fill,
+              color: Colors.white,
+            ),
             onPressed: () {},
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 50),
+          children: <Widget>[
+            Icon(
+              Icons.account_circle,
+              size: 150,
+              color: colorBorder,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              userName,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              email,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Divider(
+              height: 2,
+            ),
+            ListTile(
+              onTap: () async {
+                showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: const Text("Logout"),
+                        content: const Text("Are you sure you want to logout?"),
+                        actions: [
+                          IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: const Text(
+                              "No",
+                              style: TextStyle(color: Colors.red),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () async {
+                              await authService.signOut();
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SignInScreen()),
+                                  (route) => false);
+                            },
+                            icon: const Text(
+                              "Yes",
+                              style: TextStyle(
+                                color: Colors.green,
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    });
+              },
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              leading: const Icon(Icons.exit_to_app),
+              title: const Text(
+                "Logout",
+                style: TextStyle(color: Colors.black),
+              ),
+            )
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(
@@ -154,6 +158,7 @@ class _StoreHomeScreenState extends State<StoreHomeScreen> {
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "Explore",
@@ -177,6 +182,6 @@ class _StoreHomeScreenState extends State<StoreHomeScreen> {
           ],
         ),
       ),
-    );;
+    );
   }
 }
