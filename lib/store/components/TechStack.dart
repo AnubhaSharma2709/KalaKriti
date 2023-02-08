@@ -28,11 +28,11 @@ class TechStack extends StatelessWidget {
                     onPressed:(){},
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: defaultPadding, horizontal: defaultPadding),
+                          vertical: defaultPadding /2 , horizontal: defaultPadding /4),
                       child: Row(
                         children: [
                           Image.asset('lib/assets/icons/ar.png',
-                          height: 40),
+                          height: screenSize.height * 0.05),
                           Text('Try AR'),
                         ],
                       ),
@@ -48,11 +48,11 @@ class TechStack extends StatelessWidget {
                 onPressed:(){},
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: defaultPadding, horizontal: defaultPadding),
+                      vertical: defaultPadding /2, horizontal: defaultPadding/4),
                   child: Row(
                     children: [
                       Image.asset('lib/assets/icons/online store.png',
-                      height: 40,),
+                      height: screenSize.height * 0.05),
                       Text('Try 3D Store'),
                     ],
                   ),
