@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kalakriti/registration/utilis/color_theme.dart';
@@ -16,20 +17,39 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = utilis().getscreenSize();
     return Scaffold(
-      backgroundColor: product.bgColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: const BackButton(color: Colors.black),
+        backgroundColor: backgroundColor,
+        leading: const BackButton(color: colorBorder),
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: SvgPicture.asset(
-                "lib/assets/icons/Heart.svg",
-                height: 20,
-              ),
+            icon: Icon(
+              Icons.search,
+              color: colorBorder,
             ),
-          )
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.bell_fill,
+              color: colorBorder,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.heart_fill,
+              color: colorBorder,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.bag_fill,
+              color: colorBorder,
+            ),
+            onPressed: () {},
+          ),
         ],
       ),
       body: Column(
@@ -40,12 +60,67 @@ class DetailsScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           const SizedBox(height: defaultPadding * 1.5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: SizedBox(
+                  width: screenSize.height * 0.15,
+                  height: screenSize.height * 0.05,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text("360 Rotation",
+                    style: TextStyle(color: colorBorder),),
+                  ),
+                ),
+              ),
+              Center(
+                child: SizedBox(
+                  width: screenSize.height * 0.15,
+                  height: screenSize.height * 0.05,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text("AR Try On",
+                    style: TextStyle(color: colorBorder),),
+                  ),
+                ),
+              ),
+              Center(
+                child: SizedBox(
+                  width: screenSize.height * 0.15,
+                  height: screenSize.height * 0.05,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text("View More",
+                    style: TextStyle(color: Colors.red),),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
           Expanded(
             child: Container(
               padding: const EdgeInsets.fromLTRB(defaultPadding,
                   defaultPadding * 2, defaultPadding, defaultPadding),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: backgroundColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(defaultBorderRadius * 3),
                   topRight: Radius.circular(defaultBorderRadius * 3),
@@ -71,9 +146,7 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text(
-                      "A Henley shirt is a collarless pullover shirt, by a round neckline and a placket about 3 to 5 inches (8 to 13 cm) long and usually having 2–5 buttons.",
-                    ),
+                    child: Text("Lorem Lorem"),
                   ),
                   Text(
                     "Colors",
@@ -83,7 +156,7 @@ class DetailsScreen extends StatelessWidget {
                   Row(
                     children: const [
                       ColorDot(
-                        color: Color(0xFFBEE8EA),
+                        color: Color(0xFFBEE800),
                         isActive: false,
                       ),
                       ColorDot(
@@ -97,57 +170,61 @@ class DetailsScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: defaultPadding * 2),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Center(
-                        child: SizedBox(
-                          width: screenSize.height * 0.15,
-                          height: screenSize.height * 0.05,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                primary: colorBorder,
-                                shape: const StadiumBorder()),
-                            child: const Text("Add to Cart"),
-                          ),
-                        ),
-                      ),
-                      Center(
-                        child: SizedBox(
-                          width: screenSize.height * 0.15,
-                          height: screenSize.height * 0.05,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                primary: colorBorder,
-                                shape: const StadiumBorder()),
-                            child: const Text("AR Try On"),
-                          ),
-                        ),
-                      ),
-                      Center(
-                        child: SizedBox(
-                          width: screenSize.height * 0.15,
-                          height: screenSize.height * 0.05,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                primary: colorBorder,
-                                shape: const StadiumBorder()),
-                            child: const Text("View in 3D"),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                ],
+      Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: SizedBox(
+              width: screenSize.width,
+              height: screenSize.height * 0.05,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: colorBorder,
+                    shape: const StadiumBorder()),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(CupertinoIcons.cart,
+                    color: backgroundColor,),
+                    Text('Add to Cart'),
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Center(
+            child: SizedBox(
+              width: screenSize.width ,
+              height: screenSize.height * 0.05,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: colorBorder,
+                    shape: const StadiumBorder()),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(CupertinoIcons.heart_fill,
+                      color: backgroundColor,),
+                    Text('Add to Wishlist'),
+                  ],
+                ),
+              ),
+            ),
+          ),
+                ],
+              ),
+            ],
+              ),
+            ),
+          )],
       ),
     );
   }

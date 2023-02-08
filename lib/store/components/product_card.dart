@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kalakriti/registration/utilis/color_theme.dart';
 import 'package:kalakriti/registration/utilis/constants.dart';
 
 
@@ -24,7 +25,7 @@ class ProductCard extends StatelessWidget {
         width: 154,
         padding: const EdgeInsets.all(defaultPadding / 2),
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
         ),
         child: Column(
@@ -32,7 +33,7 @@ class ProductCard extends StatelessWidget {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: bgColor,
+                color: Colors.white,
                 borderRadius: const BorderRadius.all(
                     Radius.circular(defaultBorderRadius)),
               ),
