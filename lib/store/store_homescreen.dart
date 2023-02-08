@@ -48,7 +48,7 @@ class _StoreHomeScreenState extends State<StoreHomeScreen> {
     Size screenSize = utilis().getscreenSize();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: colorBorder),
+        iconTheme: IconThemeData(color: colorBorder,),
         backgroundColor: backgroundColor,
         title: Image.asset('lib/assets/logo.png',
         height: screenSize.height *0.12,
