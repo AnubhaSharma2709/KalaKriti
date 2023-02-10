@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kalakriti/registration/utilis/constants.dart';
 import 'package:kalakriti/registration/utilis/utilis.dart';
 
-vhwdhddhdhdhwvdwgdvgwdvvdgdveg
 class TechStack extends StatelessWidget {
   const TechStack({
     Key? key,
